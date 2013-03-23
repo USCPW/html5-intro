@@ -1,0 +1,41 @@
+<html lang="en">
+    <head>
+        <title>w-Tunes</title>
+        <meta charset="utf-8">
+        <script src="lista_musica.js"></script>
+        <script src="lista_almacenada.js"></script>
+        <link rel="stylesheet" href="wTunes.css">
+    </head>
+    <body>
+        <form>
+  		<input type="text" id="txtCancion" size="40" placeholder="Nombre cancion" onkeypress="if (event.keyCode==13){ handleButtonClick();}">
+            <input type="button" id="btnAdicionar" value="Adicionar Cancion">
+			
+        </form>
+        <ul id="lista"></ul>
+	<script>
+	window.onload = init;
+	function init(){
+		 var boton = document.getElementById("btnAdicionar");
+		boton.onclick = handleButtonClick;
+	}
+	function handleButtonClick(){
+		var text = document.getElementById("txtCancion");
+		var nombreCancion = text.value
+		if(nombreCancion == ""){
+			alert("No ha introducido un nombre para la cancion");
+		}
+		else{
+			alert("aniadiendo cancion: " +nombreCancion);
+			var li = document.createElement("li");
+			li.innerHTML = nombreCancion;
+			var ul = document.getElementById("lista");
+			ul.appendChild(li);
+			alert(" se introdujo la cancion: " + nombreCancion);
+		}
+	
+	}
+	</script>
+	
+    </body>
+</html>
