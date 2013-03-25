@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content = "text/html";charset="utf-8">
+        <title>Sample HTML5 File</title>
+        <script type="text/javascript" charset = "utf-8">
+            function cargarPagina(){ //Esta es la funcion que creara los rectangulos
+
+               //obtengo un objeto que sera mi canvas
+               var canvas=document.getElementById("pruebaCanvas");
+               //tomo el contexto 2d para este canvas
+               var contexto=canvas.getContext("2d");
+  		   // creo un objeto que sera mi imagen
+			   var imagen = new Image();
+			   //le asigno una ruta
+			   imagen.src = "http://calenidad.files.wordpress.com/2012/05/bandera_2.jpg";
+			   //la dibujo
+			   contexto.drawImage(imagen,300,20);
+                //RECTANGULOS CON RELLENO
+                contexto.fillRect( 10,20,100,150)
+                //RECTANGULOS CON SOLO EL BORDE
+                contexto.strokeRect(150,10,50,50);
+                //RECTANGULOS QUE BORRAN
+                contexto.clearRect(30,50,50,50);           
+            }
+        </script>
+    </head>
+    <body onload="cargarPagina();">
+    
+    <canvas id="pruebaCanvas" width="1000" height="1000">
+    </canvas>
+
+
+    </body>
+</html>
